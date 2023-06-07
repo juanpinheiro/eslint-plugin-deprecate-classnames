@@ -49,5 +49,13 @@ ruleTester.run('deprecate-classnames/classnames', rule, {
             ],
             options: [{ nameRegExp: /^tw-/, use: 'new-class' }],
         },
+        {
+            // eslint-disable-next-line no-template-curly-in-string
+            code: '<div className={`tw-deprecated-1 ${classes.root}`} />',
+            errors: [
+        { message: 'Class name "tw-deprecated-1" is deprecated. Use "new-class" instead' },
+            ],
+            options: [{ nameRegExp: /^tw-/, use: 'new-class' }],
+        },
     ],
 });

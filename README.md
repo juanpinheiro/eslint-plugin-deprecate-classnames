@@ -33,11 +33,87 @@ Add `deprecate` to the plugins section of your `.eslintrc` configuration file. Y
 
 Then configure the rules you want to use under the rules section.
 
+### Rule `classnames`
+
+to identify the use of deprecated classnames in JSX/TSX files:
+
+```jsx
+<div className="test-classname test-classname-2" />
+```
+
+use the following configuration:
+
 ```json
+// Specific classnames
 {
     "rules": {
-        "deprecate/classnames": ["error",
-            {"name": "classnames", "use": "new-classnames"}
+        "deprecate-classnames/classnames": ["error",
+            {"name": "test-classname", "use": "new-classname"}
+        ]
+    }
+}
+```
+
+
+```json
+// Multiple classnames
+{
+    "rules": {
+        "deprecate-classnames/classnames": ["error",
+            {"names": ["test-classname", "test-classname-2"], "use": "new-classname"}
+        ]
+    }
+}
+```
+
+```json
+// RegExp
+{
+    "rules": {
+        "deprecate-classnames/classnames": ["error",
+            {"nameRegExp": "test-", "use": "new-classnames"}
+        ]
+    }
+}
+```
+
+### Rule `classes`
+
+
+```jsx
+<div classes={{ root: "test-classname test-classname-2" }} />
+```
+
+use the following configuration:
+
+```json
+// Specific classnames
+{
+    "rules": {
+        "deprecate-classnames/classes": ["error",
+            {"name": "test-classname", "use": "new-classname"}
+        ]
+    }
+}
+```
+
+```json
+// Multiple classnames
+{
+    "rules": {
+        "deprecate-classnames/classes": ["error",
+            {"names": ["test-classname", "test-classname-2"], "use": "new-classname"}
+        ]
+    }
+}
+```
+
+```json
+// RegExp
+{
+    "rules": {
+        "deprecate-classnames/classes": ["error",
+            {"names": ["test-classname", "test-classname-2"], "use": "new-classname"}
         ]
     }
 }
@@ -46,18 +122,8 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "deprecate/classnames": ["error",
-            {"names": ["classname1", "classname2"], "use": "new-classnames"}
-        ]
-    }
-}
-```
-
-```json
-{
-    "rules": {
-        "deprecate/classnames": ["error",
-            {"nameRegExp": "tw-", "use": "new-classnames"}
+        "deprecate-classnames/classes": ["error",
+            {"nameRegExp": "test-", "use": "new-classnames"}
         ]
     }
 }

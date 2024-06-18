@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-deprecate-classnames",
-  "version": "0.3.3",
-  "description": "",
+  "version": "1.0.0",
+  "description": "An ESLint plugin with rules reporting usage of deprecated css classes",
   "main": "dist/index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register --recursive tests/**/*.js",

@@ -1,9 +1,8 @@
-# Prevents some function usage 
+# Prevents Deprecated Class Names Usage
 
 ## Rule Details
 
-This rule allows you to forbid some function usage and to suggest some alternative.
-Maybe really handy for large teams while refactoring codebase.
+This rule allows you to forbid the usage of deprecated class names in your codebase and suggests alternatives. It is especially useful for large teams during a refactor process.
 
 ### Example:
 Let's consider we have this configuration in `.eslintrc`:
@@ -12,36 +11,50 @@ Let's consider we have this configuration in `.eslintrc`:
 {
   "plugins": ["deprecate"],
   "rules": {
-    "deprecate/function": ["error",
-      {"name": "legacyFunc", "use": "newFunc from this package"}
+    "deprecate/classnames": ["error",
+      { "name": "old-class", "use": "new-class" }
     ]
   }
 }
-```
 
 ### The following patterns are considered as errors:
 
-```js
-// any function call with name legacyFunc
-console.log(legacyFunc());
-legacyFunc();
+```jsx
+// any usage of class "old-class"
+<div className="old-class❌">Deprecated class</div>
 ```
 
-## Options
-You can just pass deprecated function names as strings:
+### The following patterns are not errors:
 
-```js
-"deprecate/function": [ 2, "<fn name1>", "<fn name2>"]
+```jsx
+// usage of non-deprecated classes
+<div className="new-class✅">Updated class</div>
 ```
 
-If you want more control over displayed errors (suggest alternative function e.t.c)
-you can pass objects instead of just function names:
+### Options
 
-```js
-"deprecate/function": [ 2, 
-    {"name": "<fn name>", "use": "<suggested alternative>"}, ... ]
+You can specify deprecated class names as strings or objects to provide more control and suggest alternatives:
+
+## Simple string names:
+
+```json
+"deprecate/classnames": [ 2, "old-class1", "old-class2" ]
 ```
 
-## When Not To Use It
+## Detailed objects:
 
-When you don't want to forbid some function usage in your codebase.
+
+```json
+"deprecate/classnames": [ 2,
+    { "name": "old-class1", "use": "new-class1" },
+    { "name": "old-class2", "use": "new-class2" }
+]
+```
+
+## Regular expression for class names:
+
+```json
+"deprecate/classnames": [ 2,
+    { "nameRegExp": "old-.*", "use": "new-*"}
+]
+```

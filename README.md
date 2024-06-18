@@ -68,14 +68,14 @@ Given the following JSX code:
 {
     "rules": {
         "deprecate-classnames/classnames": ["error",
-            {"nameRegExp": /^test-/, "use": "new-classname"}
+            {"nameRegExp": "^test-", "use": "new-classname"}
         ]
     }
 }
 ```
 
 ## Rule: `classes`
-This rule identifies the use of deprecated class names within the classes prop used in Material-UI components and suggests alternatives.
+This rule identifies the use of deprecated class names within the [classes prop used in Material-UI components](https://v4.mui.com/customization/components/#overriding-styles-with-classes) and suggests alternatives.
 
 ### Example:
 Given the following JSX code:
@@ -111,7 +111,7 @@ Given the following JSX code:
 {
     "rules": {
         "deprecate-classnames/classes": ["error",
-            {"nameRegExp": /^test-/, "use": "new-classname"}
+            {"nameRegExp": "^test-", "use": "new-classname"}
         ]
     }
 }

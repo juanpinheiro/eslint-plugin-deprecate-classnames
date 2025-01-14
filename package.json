@@ -8,6 +8,7 @@
     "build": "babel lib --out-dir dist",
     "lint": "eslint lib tests",
     "fix": "eslint --fix lib tests",
+    "format": "prettier --write .",
     "preversion": "npm run lint && npm run test",
     "prepublish": "npm run build"
   },
@@ -41,6 +42,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
-    "mocha": "^11.0.1"
+    "mocha": "^11.0.1",
+    "prettier": "^3.4.2"
   }
 }

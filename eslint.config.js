@@ -1,4 +1,4 @@
-const babelParser = require('@babel/eslint-parser');
+const babelParser = require('@babel/eslint-parser')
 
 module.exports = [
   {
@@ -10,14 +10,14 @@ module.exports = [
         sourceType: 'module',
         requireConfigFile: false,
         babelOptions: {
-          presets: ['@babel/preset-env'],
-        },
-      },
+          presets: ['@babel/preset-env']
+        }
+      }
     },
     rules: {
       'import/no-commonjs': 'off',
       'global-require': 'off',
-      'max-len': 'off',
-    },
-  },
-];
+      'max-len': 'off'
+    }
+  }
+]

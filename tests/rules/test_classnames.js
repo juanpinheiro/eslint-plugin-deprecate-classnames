@@ -7,7 +7,8 @@ ruleTester.run('deprecate-classnames/classnames', rule, {
   // Test cases where the rule should pass (valid cases)
   valid: [
     {
-      // Test: No class names provided, the rule should not trigger
+    // Test: No deprecated class names provided; should not trigger
+      code: '<div className="valid-class" />',
       options: [{ name: 'deprecated', use: 'new-class' }]
     },
     {

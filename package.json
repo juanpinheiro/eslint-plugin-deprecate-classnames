@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-deprecate-classnames",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An ESLint plugin with rules reporting usage of deprecated css classes",
   "main": "dist/index.js",
   "scripts": {
@@ -15,20 +15,22 @@
   "keywords": [
     "eslint",
     "deprecation",
-    "deprecate function"
+    "deprecate function",
+    "deprecate function eslint",
+    "deprecate function eslint plugin"
   ],
   "repository": {
     "type": "git",
     "url": "git+git@github.com:juanpinheiro/eslint-plugin-deprecate-classnames.git"
   },
-  "author": "",
+  "author": "Juan Pinheiro",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/juanpinheiro/eslint-plugin-deprecate-classnames/issues"
   },
   "homepage": "https://github.com/juanpinheiro/eslint-plugin-deprecate-classnames#readme",
   "peerDependencies": {
-    "eslint": ">=2.x"
+    "eslint": ">=7.x"
   },
   "devDependencies": {
     "@babel/cli": "^7.26.4",

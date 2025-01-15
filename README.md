@@ -31,6 +31,21 @@ Add `deprecate-classnames` to the `plugins` section of your `.eslintrc` configur
 }
 ```
 
+### v9 Flat config
+
+```js
+
+import eslintPluginDeprecateClassnames from "eslint-plugin-deprecate-classname";
+
+export default [
+    {
+        plugins: {
+            "deprecate-classnames": eslintPluginDeprecateClassnames,
+        },
+    }
+]
+```
+
 Then configure the rules you want to use under the `rules` section.
 
 ## Rules

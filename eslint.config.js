@@ -17,7 +17,6 @@ module.exports = [
     rules: {
       'import/no-commonjs': 'off',
       'global-require': 'off',
-      'max-len': 'off'
     }
   }
 ]
